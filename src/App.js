@@ -4,21 +4,12 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Hello My Study Project!</h1>
+      <div>
+        개발을 시작해보자 redux react-router 등을 이용한 프로젝트<br/>
+        하다보면 되겠지...
+      </div>
     </div>
   );
 }
