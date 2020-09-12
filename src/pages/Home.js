@@ -9,15 +9,15 @@ class _Home extends Component {
         this.state = { count: 0 };
     }
 
-    componentDidMount() {
-        this.fetchData();
-    }
+    // componentDidMount() {
+    //     this.fetchData();
+    // }
 
-    fetchData = async () => {
-        const { page } = this.props;
-        const articles = await getArticle(page);
-        this.setState({ articles });
-    }
+    // fetchData = async () => {
+    //     const { page } = this.props;
+    //     const articles = await getArticle(page);
+    //     this.setState({ articles });
+    // }
 
     countUp() {
         const { count } = this.state;
@@ -26,6 +26,7 @@ class _Home extends Component {
 
     render() {
         const { count } = this.state;
+        console.log("홈도착");
         return (
             <div>
                 <h1>home</h1>
@@ -35,8 +36,8 @@ class _Home extends Component {
                     개발을 시작해보자 redux react-router 등을 이용한 프로젝트<br />
                     하다보면 되겠지...
                 </div>
-                <Link to="/auth">auth</Link>
-                <Link to="/"></Link>
+                <Link to="/auth">auth</Link><br/>
+                <Link to="/TodoList">TODO List</Link>
             </div>
         );
     }
