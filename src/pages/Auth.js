@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default class Auth extends Component {
-    render() {
-        return (
+const Auth = () => {
+    return (
+        <div>
+            Auth
             <div>
-                Auth
                 <Link to="/">home</Link>
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
+
+export default Auth;
