@@ -33,6 +33,9 @@ class TodoList extends React.Component {
 
     addContent = () => {
         const { todoList, addContent } = this.state
+        if(addContent.length ==0){
+            return ;
+        }
         const todoOb = {
             text: addContent,
             done: false,
@@ -44,8 +47,8 @@ class TodoList extends React.Component {
             todoList,
             addContent: ""
         })
-
     }
+
     press = (e) => {
         if (e.key == 'Enter') {
             this.addContent();
@@ -53,7 +56,36 @@ class TodoList extends React.Component {
     }
 
     doneTodo = (index) => {
+        const {todoList} = this.state;
+        const {todo} = todoList[index];
+        
+        todoList[index] = {
+            ...todoList[index],
+            done: true
+        }
+        console.log(todoList);
+
+        this.setState({
+            todoList
+        })
         console.log(index);
+    }
+
+    deletedTodo =(index) =>{
+        const {todoList} = this.state;
+
+        const {todo} = todoList[index];
+        
+        todoList[index] = {
+            ...todoList[index],
+            deleted: true
+        }
+        console.log(todoList);
+
+        this.setState({
+            todoList
+        })
+
     }
 
     render() {
@@ -69,7 +101,10 @@ class TodoList extends React.Component {
                     {
                         todoList.map(
                             (todo, index) => {
-                                return <Todo key={index} index={index} text={todo.text} doneTodo={() => this.doneTodo(index) } otherDone={this.doneTodo} />
+                                if(todo.deleted == true){
+                                    return null;
+                                }
+                                return <Todo key={index} index={index} text={todo.text} todo={todo} doneTodo={() => this.doneTodo(index) } deleted={this.deletedTodo} otherDone={this.doneTodo} />
                             }
 
                         )
