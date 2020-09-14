@@ -1,13 +1,15 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Root from './Root';
 import * as serviceWorker from './serviceWorker';
+import configureStore from 'redux/configureStore';
 
+
+const store = configureStore();
 ReactDOM.render(
-  <React.StrictMode>
-    <Root />
-  </React.StrictMode>,
+  <Root store={store}/>,
   document.getElementById('root')
 );
 
@@ -15,3 +17,14 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+/*
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Root from './Root';
+import registerServiceWorker from './registerServiceWorker';
+import './index.css';
+
+ReactDOM.render(<Root />, document.getElementById('root'));
+registerServiceWorker();
+*/
