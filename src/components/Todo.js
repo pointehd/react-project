@@ -4,6 +4,9 @@ class Todo extends React.Component {
     constructor(props){
         super(props);
     }
+    /*
+    인자있는 함수를 전달하는 방법 () => deleted(파라미터)
+    */
     
     render () {
         const {otherDone, todo} = this.props;
